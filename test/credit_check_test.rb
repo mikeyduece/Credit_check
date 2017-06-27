@@ -10,28 +10,29 @@ class CreditCheckTest < Minitest::Test
   end
 
   def test_it_can_have_a_number
-    credit = CreditCheck.new("123456789")
-    assert_equal "123456789", credit.num
+    credit = CreditCheck.new("4929735477250543")
+    assert_equal "4929735477250543", credit.num
   end
 
   def test_it_can_reverse_and_to_i
-    credit = CreditCheck.new("123456789")
-    assert_equal [9,8,7,6,5,4,3,2,1], credit.reverse_int
+    credit = CreditCheck.new("4929735477250543")
+    expected = [3, 4, 5, 0, 5, 2, 7, 7, 4, 5, 3, 7, 9, 2, 9, 4]
+    assert_equal expected, credit.reverse_int
   end
 
   def test_it_can_square_every_other_index
-    credit = CreditCheck.new("123456789")
-    assert_equal [81,8,49,6,25,4,9,2,1], credit.squares
+    credit = CreditCheck.new("4929735477250543")
+    expected = [9, 4, 25, 0, 25, 2, 49, 7, 16, 5, 9, 7, 81, 2, 81, 4]
+    assert_equal expected, credit.squares
   end
 
   def test_it_can_sum_digits_over_ten
-    credit = CreditCheck.new("123456789")
-    assert_equal 985614622, credit.summer
+    credit = CreditCheck.new("4929735477250543")
+    assert_equal 101, credit.summer
   end
 
-  def test_it_adds_all_together
-    skip
-    credit = CreditCheck.new("123456789")
-    assert_equal 985614622, credit.sum
+  def test_it_can_validate
+    credit = CreditCheck.new("4929735477250543")
+    assert_equal "Invalid!", credit.validate
   end
 end

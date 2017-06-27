@@ -28,7 +28,15 @@ class CreditCheck
       else
         num
       end
-    end.flatten
+    end.flatten.reduce(:+)
+  end
+
+  def validate
+    if summer % 10 == 0
+      "Valid!"
+    else
+      "Invalid!"
+    end
   end
 
 

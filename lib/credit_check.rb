@@ -32,11 +32,7 @@ class CreditCheck
   end
 
   def validate
-    if summer % 10 == 0
-      "Valid!"
-    else
-      "Invalid!"
-    end
+    summer % 10 == 0 ? "Valid!" : "Invalid!"
   end
 
 

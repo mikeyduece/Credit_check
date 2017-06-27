@@ -11,11 +11,7 @@ class CreditCheck
 
   def squares
     reverse_int.map.with_index do |num,index|
-      if index.odd?
-        num * 2
-      else
-        num
-      end
+      index.odd? ? num*2 : num
     end
   end
 
@@ -32,11 +28,7 @@ class CreditCheck
   end
 
   def validate
-    if summer % 10 == 0
-       "Valid!"
-    else
-       "Invalid!"
-    end
+    summer % 10 == 0 ? "Valid!" : "Invalid!"
   end
 
 

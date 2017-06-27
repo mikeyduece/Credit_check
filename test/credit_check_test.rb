@@ -37,6 +37,7 @@ class CreditCheckTest < Minitest::Test
     credit = CreditCheck.new("6011797668867828")
     assert_equal "Valid!", credit.validate
   end
+  
   def test_it_can_do_amex
     credit = CreditCheck.new("342804633855673")
     assert_equal "Valid!", credit.validate

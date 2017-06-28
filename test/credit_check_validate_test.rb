@@ -20,7 +20,7 @@ class CreditCheckTest < Minitest::Test
     assert_equal expected, credit.reverse_int
   end
 
-  def test_it_can_square_every_other_index
+  def test_it_can_double_every_other_index
     credit = CreditCheck.new("6011797668867828")
     expected = [8, 4, 8, 14, 6, 16, 8, 12, 6, 14, 9, 14, 1, 2, 0, 12]
     assert_equal expected, credit.squares

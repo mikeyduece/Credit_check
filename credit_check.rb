@@ -1,4 +1,4 @@
-require './lib/credit_check'
+require './lib/credit_check_validate'
 
 puts "Enter credit card number to validate: "
 print "> "

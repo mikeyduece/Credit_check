@@ -17,6 +17,7 @@ class CreditCheck
 
   def summer
     squares.map do |num|
+      require "pry"; binding.pry
       if num > 9
         num.to_s.chars.each_slice(2).map do |num_1,num_2|
           num_1.to_i + num_2.to_i
